@@ -3,7 +3,7 @@
 //  Notifications
 //
 //  Created by Roman Holovai on 10.10.2021.
-//  Copyright © 2021 Alexey Efimov. All rights reserved.
+//  Copyright © 2021 GRommy. All rights reserved.
 //
 
 import UIKit
