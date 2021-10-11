@@ -37,6 +37,18 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         content.badge = 1
         content.categoryIdentifier = userAction
         
+        guard let path = Bundle.main.path(forResource: "favicon", ofType: "png") else { return }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let attachment = try UNNotificationAttachment(identifier: "favicon",
+                                                      url: url,
+                                                      options: nil)
+            content.attachments = [attachment]
+        } catch {
+            print("The attacment could not be loaded")
+        }
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         let identifier = "Local notification"
